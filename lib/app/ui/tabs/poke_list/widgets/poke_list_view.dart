@@ -54,14 +54,25 @@ class PokeListView extends StatelessWidget {
                     leading: Container(
                       height: 48,
                       width: 48,
-                      decoration: const BoxDecoration(
-                          color: Color(0xFF048ABF), shape: BoxShape.circle),
+                      decoration: BoxDecoration(
+                          color:
+                              pokeListController.listaPokemons[index].imagem ==
+                                          null &&
+                                      pokeListController
+                                          .listaPokemons[index].pokemonCriado
+                                  ? Colors.white
+                                  : const Color(0xFF048ABF),
+                          shape: BoxShape.circle),
                       child: pokeListController
                               .listaPokemons[index].pokemonCriado
-                          ? Image.file(
-                              pokeListController.listaPokemons[index].imagem,
-                              fit: BoxFit.fill,
-                            )
+                          ? pokeListController.listaPokemons[index].imagem !=
+                                  null
+                              ? Image.file(
+                                  pokeListController
+                                      .listaPokemons[index].imagem,
+                                  fit: BoxFit.fill,
+                                )
+                              : Image.asset("assets/pokeball.png")
                           : Image.network(
                               pokeListController.listaPokemons[index].urlImage,
                               fit: BoxFit.fill,

@@ -39,10 +39,22 @@ class CustomBottomSheetModal extends StatelessWidget {
                           child: SizedBox(
                             width: 100,
                             height: 100,
-                            child: Image.file(
-                              pokeListController.listaPokemons[index].imagem,
-                              fit: BoxFit.fill,
-                            ),
+                            child: pokeListController
+                                    .listaPokemons[index].pokemonCriado
+                                ? pokeListController
+                                            .listaPokemons[index].imagem !=
+                                        null
+                                    ? Image.file(
+                                        pokeListController
+                                            .listaPokemons[index].imagem,
+                                        fit: BoxFit.fill,
+                                      )
+                                    : Image.asset("assets/pokeball.png")
+                                : Image.network(
+                                    pokeListController
+                                        .listaPokemons[index].urlImage,
+                                    fit: BoxFit.fill,
+                                  ),
                           ),
                         )
                       : Image.network(

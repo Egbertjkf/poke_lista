@@ -19,11 +19,14 @@ class PokeListFav extends StatelessWidget {
               ListTile(
                 onTap: () async {
                   String detailText = '';
-                  var detailsList = await pokeListController.getPokemonDetails(
-                      pokeListController.listaPokemons[index].detailsLink);
-                  List stringListDetail = detailsList[1].split("\n");
-                  for (var strings in stringListDetail) {
-                    detailText += strings;
+                  List<dynamic> detailsList = [];
+                  if (!pokeListController.listaPokemons[index].pokemonCriado) {
+                    detailsList = await pokeListController.getPokemonDetails(
+                        pokeListController.listaPokemons[index].detailsLink);
+                    List stringListDetail = detailsList[1].split("\n");
+                    for (var strings in stringListDetail) {
+                      detailText += strings;
+                    }
                   }
 
                   Get.bottomSheet(CustomBottomSheetModal(
