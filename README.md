@@ -1,16 +1,14 @@
 # poke_lista
 
-A new Flutter project.
+App consumindo API aberta "pokeApi" e mostrando os primeiros 15 pokemons,
+além disso permite Criar um pokemon e utilizar uma foto da galeria como sua imagem.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Neste app utilizei as dependencias
+Get,Google_fonts,image_picke e flutter_svg, todas disponíveis no pub.Dev
 
-A few resources to get you started if this is your first Flutter project:
+Para rodar o app basta clonar o repositório e utilizar o comando "flutter pub get", em seguida já será
+possível compilar em um dispositivo android.
+App criado utilizando a versão 2.5.3 e Sound Null-Safety ativo
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
